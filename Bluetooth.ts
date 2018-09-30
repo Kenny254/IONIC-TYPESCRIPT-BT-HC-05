@@ -1,3 +1,19 @@
+
+Ionic Code
+
+/* */
+this._bluetoothSerial.write(‘S’) // Start the measurement
+.then((data: any) => {
+this.measuring(); // Wait for results
+})
+.catch((e) => {
+this.errorCommBluetooth(); // Error alert
+});
+
+private measuring(): void {
+this.readOk = false;
+
+
 this._bluetoothSerial.available()
 .then((number: any) => {
     this._bluetoothSerial.read()
